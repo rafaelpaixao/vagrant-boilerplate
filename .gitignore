@@ -1,0 +1,4 @@
+.vagrant/
+!.vagrant/root.sh
+!.vagrant/unprivileged.sh
+!.vagrant/config.example.rb
