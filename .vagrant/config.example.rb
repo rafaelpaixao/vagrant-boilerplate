@@ -1,13 +1,19 @@
 module VagrantConfig    
-    VAGRANTENV = {
-        "VAGRANT_NAME" => "VagrantVM",
-        "VAGRANT_BOX" => "ubuntu/xenial64",
-        "VAGRANT_IP" => "192.168.33.10",
-        "VAGRANT_MEMORY" => "1024",
-        "VAGRANT_CPUS" => "1",
-        "VAGRANT_CPU_EXECUTION_CAP" => "100",
-        "VAGRANT_SHARED_FOLDER" => "/home/vagrant/shared",
-        
-        # ADD MORE ENV VARIABLES HERE
+    SETTINGS = {
+        "VM_NAME" => "VagrantVM",
+        "BOX_NAME" => "ubuntu/xenial64",
+        "BOX_VERSION" => ">= 0",
+        "IP" => "192.168.33.10",
+        "PUBLIC_NETWORK" => false, #Allow public network
+        "MEMORY" => "2048",
+        "CPUS" => "1",
+        "CPU_EXECUTION_CAP" => "100"
     }
+    PROJECTS = [
+        {
+            "FOLDER" => "../app",
+            "SCRIPT" => "script/vagrant.sh",
+            "ARGS" => [],
+        }
+    ]
 end
