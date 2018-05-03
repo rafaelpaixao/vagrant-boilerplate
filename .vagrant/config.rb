@@ -11,8 +11,9 @@ module VagrantConfig
     }
     PROJECTS = [
         {
-            "FOLDER" => "../app",
-            "SCRIPT" => "script/vagrant.sh",
+            "SYNC_HOST" => "./app",
+            "SYNC_GUEST" => "/home/vagrant/app",
+            "SCRIPT" => "/script/vagrant.sh",
             "ARGS" => [],
         }
     ]

@@ -49,17 +49,15 @@ SCRIPT
   config.vm.provision "first", type: "shell", inline: first, preserve_order: true
 
   for project in PROJECTS do
-    guest = "/home/vagrant/" + project["FOLDER"].split('/')[-1]
-    config.vm.synced_folder project["FOLDER"], guest, :mount_options => ["dmode=777", "fmode=666"]
+    config.vm.synced_folder project["SYNC_HOST"], project["SYNC_GUEST"], :mount_options => ["dmode=777", "fmode=666"]
 
     if project.key?("SCRIPT")
-      script = project["FOLDER"] + "/" + project["SCRIPT"]
-      config.vm.provision project["FOLDER"].split('/')[-1],
+      config.vm.provision project["SYNC_GUEST"].split('/')[-1],
         type: "shell",
         preserve_order: true,
         privileged: false,
-        path: script,
-        args: script["ARGS"]
+        path: project["SYNC_HOST"] + project["SCRIPT"],
+        args: project["ARGS"]
     end
 
   end
