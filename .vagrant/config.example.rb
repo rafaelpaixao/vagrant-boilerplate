@@ -13,7 +13,7 @@ module VagrantConfig
         {
             "SYNC_HOST" => ".",
             "SYNC_GUEST" => "/home/vagrant/app",
-            "SCRIPT" => "script/install.sh",
+            "SCRIPT" => "/scripts/install.sh",
             "ARGS" => ["--src","/home/vagrant/app"],
         }
     ]
