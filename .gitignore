@@ -1,2 +1,2 @@
-.vagrant/
-!.vagrant/config.example.rb
+.vagrant/machines
+.vagrant/config.rb
